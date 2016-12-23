@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lang>
+	<item name="msg_document_deleted">
+		<value xml:lang="en"><![CDATA[This document was deleted.]]></value>
+		<value xml:lang="ko"><![CDATA[삭제된 게시글입니다.]]></value>
+	</item>
+	<item name="msg_document_deleted_vote_up">
+		<value xml:lang="ko"><![CDATA[삭제된 게시글에 추천 할 수 없습니다.]]></value>
+	</item>
+	<item name="msg_document_deleted_vote_down">
+		<value xml:lang="ko"><![CDATA[삭제된 게시글에 비추천 할 수 없습니다.]]></value>
+	</item>
+	<item name="msg_already_document_deleted">
+		<value xml:lang="ko"><![CDATA[이미 삭제된 게시글입니다.]]></value>
+	</item>
+	<item name="msg_comment_deleted">
+		<value xml:lang="en"><![CDATA[This comment was deleted.]]></value>
+		<value xml:lang="ko"><![CDATA[삭제된 댓글입니다.]]></value>
+	</item>
+	<item name="msg_comment_deleted_vote_up">
+		<value xml:lang="ko"><![CDATA[삭제된 댓글에 추천 할 수 없습니다.]]></value>
+	</item>
+	<item name="msg_comment_deleted_vote_down">
+		<value xml:lang="ko"><![CDATA[삭제된 댓글에 비추천 할 수 없습니다.]]></value>
+	</item>
+	<item name="msg_already_comment_deleted">
+		<value xml:lang="ko"><![CDATA[이미 삭제된 댓글입니다.]]></value>
+	</item>
+	<item name="msg_comment_update_deny_child">
+		<value xml:lang="ko"><![CDATA[대댓글이 있는 댓글은 수정할 수 없습니다.]]></value>
+	</item>
+</lang>
