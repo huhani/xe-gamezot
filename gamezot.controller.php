@@ -211,6 +211,7 @@ class gamezotController extends gamezot
 
 		$args = (object)$oComment->variables;
 		$args->content = sprintf('<!--DeletedComment--><span style="color:#888888">%s</span>', $lang->msg_comment_deleted);
+		$args->uploaded_count = 0;
 		$output = executeQuery('comment.updateComment', $args);
 		if (!$output->toBool())	{
 			return $output;
