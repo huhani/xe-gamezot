@@ -35,6 +35,10 @@ class gamezotModel extends gamezot
 		$comment_srl = Context::get('comment_srl');
 		$logged_info = Context::get('logged_info');
 		
+		if(!$comment_srl){
+			return new Object(-1, "msg_invalid_request");
+		}
+		
 		$is_manager = $logged_info ? $this->checkIsBoardAdmin($mid) : false;
 		if($comment_srl){
 			$oCommentModel = getModel('comment');
