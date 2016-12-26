@@ -221,7 +221,7 @@ class gamezotController extends gamezot
 
 		$obj->add('mid', Context::get('mid'));
 		$obj->add('page', Context::get('page'));
-		$obj->add('comment_srl', $output->get('comment_srl'));
+		$obj->add('document_srl', $oComment->get('document_srl'));
 		if(Context::get('xeVirtualRequestMethod') !== 'xml'){
 			$obj->setMessage('success_deleted');
 		}
