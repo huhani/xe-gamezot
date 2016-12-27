@@ -125,6 +125,19 @@ class gamezotController extends gamezot
 			$oCacheHandler->delete($cache_key);
 		}
 
+		$member_srl = $oDocument->get('member_srl');
+		if($member_srl){
+			$module_srl = $oDocument->get('module_srl');
+			$oModuleModel = getModel('module');
+			$config = $oModuleModel->getModuleConfig('point');
+			$module_config = $oModuleModel->getModulePartConfig('point', $module_srl);
+			$point = $module_config['insert_document'] ? $module_config['insert_document'] : 0;
+			if($point){
+				$oPointController = getController('point');
+				$oPointController->setPoint($member_srl, $point, 'minus');
+			}
+		}
+
 		$obj->setRedirectUrl(getNotEncodedUrl('', 'mid', Context::get('mid'), 'act', '', 'page', Context::get('page'), 'document_srl', ''));
 		$obj->add('mid', Context::get('mid'));
 		$obj->add('page', Context::get('page'));
@@ -219,6 +232,20 @@ class gamezotController extends gamezot
 
 		$oFileController = getController('file');
 		$output = $oFileController->deleteFiles($comment_srl);
+
+		$member_srl = $oComment->get('member_srl');
+		if($member_srl){
+			$module_srl = $oComment->get('module_srl');
+			$oModuleModel = getModel('module');
+			$config = $oModuleModel->getModuleConfig('point');
+			$module_config = $oModuleModel->getModulePartConfig('point', $module_srl);
+			$point = $module_config['insert_comment'] ? $module_config['insert_comment'] : 0;
+
+			if($point){
+				$oPointController = getController('point');
+				$oPointController->setPoint($member_srl, $point, 'minus');
+			}
+		}
 
 		$obj->add('mid', Context::get('mid'));
 		$obj->add('page', Context::get('page'));
